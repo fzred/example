@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+html, body, .scrollWrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollWrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;;
+}
+
+footer.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f00;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .8);
+  z-index: 1;
+}

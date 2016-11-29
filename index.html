@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mobile-layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="./index.css" rel="stylesheet" />
+</head>
+<body>
+<div class="layer" style="display:none;">
+    我是弹层，滑动不会穿透
+</div>
+<div class="scrollWrapper">
+    <div style="height:2000px;background:#ff9">内容<br><br><br>
+        <input type="text"/>
+        <button onclick="showLayer()">点击显示弹层</button>
+    </div>
+</div>
+<footer class="footer">
+    <a>menu1</a>
+    <a>menu2</a>
+</footer>
+<script>
+  function showLayer() {
+    document.querySelector('.layer').style.display = 'block'
+  }
+</script>
+</body>
+</html>
