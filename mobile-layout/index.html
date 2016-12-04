@@ -7,9 +7,6 @@
     <link href="./index.css" rel="stylesheet" />
 </head>
 <body>
-<div class="layer" style="display:none;">
-    我是弹层，滑动不会穿透
-</div>
 <div class="scrollWrapper">
     <div style="height:2000px;background:#ff9">内容<br><br><br>
         <input type="text"/>
@@ -20,6 +17,9 @@
     <a>menu1</a>
     <a>menu2</a>
 </footer>
+<div class="layer" style="display:none;">
+    我是弹层，滑动不会穿透
+</div>
 <script>
   function showLayer() {
     document.querySelector('.layer').style.display = 'block'
