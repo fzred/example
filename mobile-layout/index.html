@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <title>mobile-layout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="./index.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+        }
+
+        html, body, .scrollWrapper {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .scrollWrapper {
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto;
+        }
+
+        body.openLayer .scrollWrapper {
+            -webkit-overflow-scrolling: auto;
+        }
+
+        footer.footer {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #f00;
+        }
+
+        .layer {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, .8);
+            color:#fff;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
 <div class="scrollWrapper">
-    <div style="height:2000px;background:#ff9">内容<br><br><br>
-        <input type="text"/>
+    <div style="height:2000px;background: linear-gradient(#ffffff, black);">内容<br><br><br>
+        <input type="text" />
         <button onclick="showLayer()">点击显示弹层</button>
     </div>
 </div>
@@ -17,13 +55,19 @@
     <a>menu1</a>
     <a>menu2</a>
 </footer>
-<div class="layer" style="display:none;">
+<div class="layer" style="display:none;" onclick="hideLayer()">
     我是弹层，滑动不会穿透
 </div>
 <script>
   function showLayer() {
     document.querySelector('.layer').style.display = 'block'
+    document.body.classList.add('openLayer')
+  }
+  function hideLayer() {
+    document.querySelector('.layer').style.display = 'none'
+    document.body.classList.remove('openLayer')
   }
 </script>
 </body>
+
 </html>
